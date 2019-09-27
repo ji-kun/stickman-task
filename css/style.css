@@ -13,6 +13,11 @@ body {
     width: 10vw;
     background: #424242; /*3a3a3a */
     box-shadow: 5px 0px 7px #00000030;
+    transition: all 0.4s ease-out;
+}
+.nonav .sidenav {
+    transform: translateX(-10vw);
+    width: 0vw;
 }
 .snavdiv {
     display: flex;
@@ -35,10 +40,7 @@ body {
     width: 100%;
     cursor: pointer;
 }
-.sntop > div.active {
-    background: #3a3a3a;
-}
-.sntop > div:hover {
+.sntop > div.active, .sntop > div:hover {
     background: #3a3a3a;
 }
 .sntop > div > img {
@@ -55,10 +57,31 @@ body {
 .logodiv > img {
     height: 80%;
 }
+.snbottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 7vh;
+    width: 100%;
+}
+.arrow-left {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0px 0px 3px 3px;
+    transform: rotate(45deg);
+    margin-right: 25px;
+    cursor: pointer;
+}
 .dashbody {
     display: flex;
     flex-direction: column;
     width: 90vw;
+    transition: width 0.4s ease-out;
+}
+.nonav .dashbody {
+    width: 100vw;
 }
 .topnav {
     display: flex;
@@ -68,6 +91,28 @@ body {
     width: 100%;
     height: 7vh;
     box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.3);
+}
+.namespan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.burgers {
+    display: none;
+    cursor: pointer;
+    border-bottom: 2px solid black;
+    width: 20px;
+    margin-right: 10px;
+}
+.burgers:before, .burgers:after {
+    content: "";
+    display: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-bottom: 3px;
+}
+.nonav .burgers, .nonav .burgers:before, .nonav .burgers:after {
+    display: block;
 }
 .topnav > span, .bottomnav > span {
     margin: 0px 25px;
@@ -84,7 +129,6 @@ body {
 }
 .main {
     min-height: 86vh;
-    background: #f1c8c852;
 }
 .main > div {
     display: none;
@@ -92,7 +136,39 @@ body {
 }
 .main > div.active {
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.stepsec {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
+    height: 40%;
+    margin-top: 20px;
+    background: #fff;
+}
+.secheading {
+    padding: 7px 15px;
+    border-left: 2px solid rgb(60, 45, 128);
+}
+.stepsec:hover .secheading {
+    border-left-color: orange;
+}
+.stepimg {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+.stepimg > img {
+    width: 14%;
+    margin: 0 3vw;
+}
+
 .bottomnav {
     display: flex;
     flex-direction: row;
